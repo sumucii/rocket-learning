@@ -4,4 +4,17 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-rocket="0.5.1"  # Rocket web framework框架
+# 快速的 Web Api 框架
+rocket = { version = "0.5.1", features = ["json"] }
+# 读取配置信息工具包
+config = "0.14.0"
+# 数据库 ORM,支持 mysql
+diesel = { version = "2.2.2", features = ["mysql", "chrono"] }
+# 读取 .env 配置工具包
+dotenvy = "0.15.7"
+# 时间管理工具包
+chrono = { version = "0.4.38", features = ["serde"] }
+# mysql
+mysql = "25.0.1"
+# 序列化工具包
+serde = { version = "1.0.205", features = ["derive"] }
