@@ -36,6 +36,12 @@ fn put(name: String) -> String { // 处理函数，返回字符串
     format!("Hello, {}! 这是一个put请求", name) // 返回 "Hello, <name>!" format! 宏用于格式化字符串
 }
 
+//delete请求
+#[delete("/delete/<name>")] // 定义一个 DELETE 请求的处理函数，路径为 "/delete/<name>"
+fn delete(name: &str) -> String { // 处理函数，返回字符串
+    format!("{}! 这是一个delete请求", name) // 返回 "Hello, <name>!"
+}
+
 #[launch] // 定义应用程序的入口点
 fn rocket() -> _ { // 返回一个 Rocket 实例
     rocket::build() // 构建 Rocket 实例
@@ -45,4 +51,5 @@ fn rocket() -> _ { // 返回一个 Rocket 实例
         .mount("/", routes![hello_name_age]) // 将处理函数挂载到路径 "/hello/<name>/<age>"
         .mount("/", routes![post]) // 将处理函数挂载到路径 "/post"
         .mount("/", routes![put]) // 将处理函数挂载到路径 "/put"
+        .mount("/", routes![delete]) // 将处理函数挂载到路径 "/delete/<name>"
 }
