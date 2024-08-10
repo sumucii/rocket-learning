@@ -4,18 +4,15 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-# 快速的 Web Api 框架
-rocket = { version = "0.5.1", features = ["json"] }
-# 读取配置信息工具包
-config = "0.14.0"
-# 数据库 ORM,支持 mysql
-diesel = { version = "2.2.2", features = ["mysql", "chrono"] }
-# 读取 .env 配置工具包
-dotenvy = "0.15.7"
-# 时间管理工具包
-chrono = "0.4.38"
-# mysql
-mysql = "25.0.1"
-# 序列化工具包
-json = "0.12.4"
-serde = { version = "1.0.205", features = ["derive"] }
+rocket = { version = "0.5.1", features = ["json"] }  # 添加 Rocket 依赖项，版本为 0.5.1，启用 json 特性
+rocket_codegen = "0.5.1"  # 添加 Rocket 代码生成依赖项，版本为 0.5.1
+serde = { version = "1.0.205", features = ["derive"] }  # 添加 Serde 依赖项，版本为 1.0.205，启用 derive 特性
+serde_json = "1.0.122"  # 添加 Serde JSON 依赖项，版本为 1.0.122
+
+
+[profile.dev]
+panic = "abort"  # 在开发配置中设置 panic 策略为 abort
+
+[profile.release]
+panic = "abort"  # 在发布配置中设置 panic 策略为 abort
+
