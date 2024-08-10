@@ -13,8 +13,9 @@ diesel = { version = "2.2.2", features = ["mysql", "chrono"] }
 # 读取 .env 配置工具包
 dotenvy = "0.15.7"
 # 时间管理工具包
-chrono = { version = "0.4.38", features = ["serde"] }
+chrono = "0.4.38"
 # mysql
 mysql = "25.0.1"
 # 序列化工具包
+json = "0.12.4"
 serde = { version = "1.0.205", features = ["derive"] }
