@@ -20,19 +20,19 @@ fn hello(name: &str) -> String {  // 定义 hello 处理函数，参数为字符
     format!("Hello, {}!", name)  // 返回格式化后的字符串
 }
 
-#[post("/user", format = "json", data = "<user>")]  // 定义 POST 请求的路由，数据格式为 JSON
+#[post("/post-user", format = "json", data = "<user>")]  // 定义 POST 请求的路由，数据格式为 JSON
 fn create_user(user: Json<User>) -> Json<User> {  // 定义 create_user 处理函数，参数为 JSON 格式的 User
     user  // 返回接收到的用户数据
 }
 
 //put请求示例
-#[put("/user", format = "json", data = "<user>")]  // 定义 PUT 请求的路由，数据格式为 JSON
+#[put("/put-user", format = "json", data = "<user>")]  // 定义 PUT 请求的路由，数据格式为 JSON
 fn update_user(user: Json<User>) -> Json<User> {  // 定义 update_user 处理函数，参数为 JSON 格式的 User
     user  // 返回接收到的用户数据
 }
 
 //delete请求示例
-#[delete("/user", format = "json", data = "<user>")]  // 定义 DELETE 请求的路由，数据格式为 JSON
+#[delete("/delete-user", format = "json", data = "<user>")]  // 定义 DELETE 请求的路由，数据格式为 JSON
 fn delete_user(user: Json<User>) -> Json<User> {  // 定义 delete_user 处理函数，参数为 JSON 格式的 User
     user  // 返回接收到的用户数据
 }
