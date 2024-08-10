@@ -25,8 +25,21 @@ fn create_user(user: Json<User>) -> Json<User> {  // 定义 create_user 处理�
     user  // 返回接收到的用户数据
 }
 
+//put请求示例
+#[put("/user", format = "json", data = "<user>")]  // 定义 PUT 请求的路由，数据格式为 JSON
+fn update_user(user: Json<User>) -> Json<User> {  // 定义 update_user 处理函数，参数为 JSON 格式的 User
+    user  // 返回接收到的用户数据
+}
+
+//delete请求示例
+#[delete("/user", format = "json", data = "<user>")]  // 定义 DELETE 请求的路由，数据格式为 JSON
+fn delete_user(user: Json<User>) -> Json<User> {  // 定义 delete_user 处理函数，参数为 JSON 格式的 User
+    user  // 返回接收到的用户数据
+}
+
 #[launch]  // 定义 Rocket 启动函数
 fn rocket() -> _ {  // 定义 rocket 函数，返回类型为隐式
     rocket::build()  // 构建 Rocket 实例
         .mount("/", routes![index, hello, create_user])  // 挂载路由
+        .mount("/", routes![update_user, delete_user])  // 挂载路由
 }
