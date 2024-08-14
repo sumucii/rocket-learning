@@ -15,6 +15,6 @@ use routes::basic_route::{basic_view, create_user_route, delete_user_route, hell
 fn rocket() -> _ {  // 定义 rocket 函数，返回类型为隐式
     rocket::build()  // 构建 Rocket 实例
         .mount("/", routes![index_route, hello_route, create_user_route, update_user_route, delete_user_route])  // 挂载路由
-        .mount("/", routes![user_login])
+        .mount("/", routes![user_login])    // 挂载登录路由
         .mount("/", routes![basic_view])  // 挂载视图
 }
