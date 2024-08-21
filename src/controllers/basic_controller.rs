@@ -1,6 +1,8 @@
 // src/controllers/basic_controller.rs
-use rocket::serde::json::Json; // 引入 Json 序列化模块
-use crate::models::basic_model::{User, LoginUser}; // 引入 User 和 LoginUser 模型
+use rocket::serde::json::Json;
+// 引入 Json 序列化模块
+use crate::models::basic_model::{LoginUser, User};
+// 引入 User 和 LoginUser 模型
 
 pub fn index() -> &'static str { // 定义 index 控制器函数
     "Hello, world!" // 返回 "Hello, world!" 字符串
