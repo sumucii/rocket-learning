@@ -11,6 +11,10 @@ serde_json = "1.0.122"  # 添加 Serde JSON 依赖项，版本为 1.0.122
 
 jsonwebtoken = "9.3.0"  # 添加 JSON Web Token 依赖项，版本为 9.3.0
 
+rocket_sync_db_pools = { version = "0.1.0", features = ["diesel_postgres_pool"] }  # 添加 Rocket 数据库连接池依赖项，版本为 0.1.0，启用 diesel_postgres_pool 特性
+diesel = { version = "2.2.2", features = ["postgres", "chrono"] }  # 添加 Diesel 依赖项，版本为 1.4.8，启用 postgres 和 chrono 特性
+pq-sys = "0.6.1"    # 添加 pq-sys 依赖项，版本为 0.6.1，用于连接 PostgreSQL 数据库，需要与 diesel 版本匹配，否则会出现编译错误，这里使用 Diesel 2.2.2，所以选择 pq-sys 0.6.1
+
 [profile.dev]
 panic = "abort"  # 在开发配置中设置 panic 策略为 abort
 
