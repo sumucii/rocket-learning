@@ -1,11 +1,11 @@
-// src/routes/basic_route.rs
-use rocket::serde::json::Json;
-// 引入 Json 序列化模块
-use rocket::response::content;
 // 引入 content 模块
 use crate::controllers::basic_controller::{create_user, delete_user, hello, index, login_user, update_user};
 // 引入控制器函数
 use crate::models::basic_model::{LoginUser, User};
+// 引入 Json 序列化模块
+use rocket::response::content;
+// src/routes/basic_route.rs
+use rocket::serde::json::Json;
 // 引入 User 和 LoginUser 模型
 
 #[get("/")] // 定义 GET 路由
