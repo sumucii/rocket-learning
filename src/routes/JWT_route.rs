@@ -1,8 +1,8 @@
-use rocket::serde::json::Json;
 // 引入 Json 序列化模块
 use crate::controllers::JWT_controller::{generate_jwt, validate_jwt};
 // 引入 JWT 控制器函数
 use crate::models::JWT_model::Claims;
+use rocket::serde::json::Json;
 // 引入 Claims 结构体
 
 #[post("/generate", format = "json", data = "<user>")] // 定义生成 JWT 的 POST 路由

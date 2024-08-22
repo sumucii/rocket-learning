@@ -1,12 +1,12 @@
-use rocket::serde::json::Json;
+// 引入 Diesel 预导入模块
+use crate::controllers::student_controller::{create_student, delete_student, read_student, update_student};
 // 引入 Json 序列化模块
 use crate::models::database::StudentsDbConn;
 // 引入数据库连接池
 use crate::models::student_model::Student;
 // 引入学生模型
 use diesel::prelude::*;
-// 引入 Diesel 预导入模块
-use crate::controllers::student_controller::{create_student, delete_student, read_student, update_student};
+use rocket::serde::json::Json;
 // 引入学生控制器中的函数
 
 #[post("/students", format = "json", data = "<student>")] // 定义添加学生的 POST 路由

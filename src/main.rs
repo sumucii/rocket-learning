@@ -1,7 +1,8 @@
 // 引入 Rocket 库
 extern crate pq_sys;
 #[macro_use]  // 使用宏
-extern crate rocket;    // 引入 `pq_sys` crate
+extern crate rocket;
+// 引入 `pq_sys` crate
 
 mod routes;  // 引入 routes 模块
 mod controllers;  // 引入 controllers 模块
