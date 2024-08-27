@@ -11,6 +11,12 @@ use rocket::serde::json::Json;
 #[get("/")] // 定义 GET 路由
 pub fn index_route() -> &'static str { // 定义 index_route 函数
     index() // 调用 index 控制器函数
+
+}
+
+#[get("/index")] // 定义 index 路由
+pub fn index_view() -> content::RawHtml<&'static str> { // 定义 index_view 函数
+    content::RawHtml(include_str!("../views/index.html")) // 返回 index.html 页面内容
 }
 
 #[get("/hello/<name>")] // 定义带参数的 GET 路由
