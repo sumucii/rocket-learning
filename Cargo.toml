@@ -19,7 +19,7 @@ pq-sys = "0.6.1"    # 添加 pq-sys 依赖项，版本为 0.6.1，用于连接 P
 panic = "abort"  # 在开发配置中设置 panic 策略为 abort，这样当程序 panic 时，会直接终止程序
 
 [profile.release]
-panic = "abort"  # 在发布配置中设置 panic 策略为 abort
+panic = "abort"  # 在发布配置中设置 panic 策略为 abort，这样当程序 panic 时，会直接终止程序
 
 
 
