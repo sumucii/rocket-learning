@@ -1,3 +1,3 @@
 # 在 `Rocket.toml` 文件中配置数据库连接
 [global.databases.students] # 配置数据库连接
-url = "postgres://postgres:123456@localhost/students" # 数据库连接 URL
+url = "postgres://postgres:123456@localhost/students" # 数据库连接URL，数据库名为students
